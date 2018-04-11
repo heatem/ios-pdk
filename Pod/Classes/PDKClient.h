@@ -52,7 +52,7 @@ typedef void (^PDKPinUploadProgress)(CGFloat percentComplete);
  *  permission to access his/her account.
  *
  *  Once authenticated, calls can be made by passing in endpoints directly (using
- *  methods like getPath:parameters:success:failure:) or by using convience methods
+ *  methods like getPath:parameters:success:failure:) or by using convenience methods
  *  (like getPinsForBoard:success:failure)
  */
 @interface PDKClient : AFHTTPSessionManager
@@ -63,7 +63,7 @@ typedef void (^PDKPinUploadProgress)(CGFloat percentComplete);
 @property (nonatomic, readonly, copy) NSString *appId;
 
 /**
- *  The oauthToken returned from the server unpon authentication. If you store this in your
+ *  The oauthToken returned from the server upon authentication. If you store this in your
  *  app, please be sure to do so securely (in keychain) and be warned that it can expire
  *  at any time. If the token expires, you will need to reauthenticate and get a new token.
  */
@@ -93,7 +93,7 @@ typedef void (^PDKPinUploadProgress)(CGFloat percentComplete);
 /**
  *  Called to ask for a Pinterest user's permission to access his/her account. This method
  *  will either redirect to the Pinterest app (if installed) or to a website to allow a
- *  user to authuorize his/her account.
+ *  user to authorize his/her account.
  *
  *  This method will try to use the cached token to authenticate if it is available. If not,
  *  then the user will be redirected to authenticate. If you wish to silently authenticate if
@@ -141,7 +141,7 @@ typedef void (^PDKPinUploadProgress)(CGFloat percentComplete);
 + (void)clearAuthorizedUser;
 
 
-#pragma mark - Generic API access
+#pragma mark - Generic API Access
 /**
  *  Makes a GET API request
  *
@@ -222,8 +222,8 @@ typedef void (^PDKPinUploadProgress)(CGFloat percentComplete);
 /**
  *  Get a PDKUser with the given username
  *
- *  @param username     username (or ID) of a Pinterest user
- *  @param fields       The user fields that will be returned by the api
+ *  @param username     The username (or ID) of a Pinterest user
+ *  @param fields       The user fields that will be returned by the API
  *  @param successBlock Called when the API call succeeds
  *  @param failureBlock Called when the API call fails
  */
@@ -236,7 +236,7 @@ typedef void (^PDKPinUploadProgress)(CGFloat percentComplete);
  *  Get a list of the authorized user's pins. The response can be
  *  used to get the next page of pins.
  *
- *  @param fields       The pins fields that will be returned by the api
+ *  @param fields       The pin fields that will be returned by the API
  *  @param successBlock Called when the API call succeeds
  *  @param failureBlock Called when the API call fails
  */
@@ -248,7 +248,7 @@ typedef void (^PDKPinUploadProgress)(CGFloat percentComplete);
  *  Get a list of the authorized user's likes. The reponse can be used to get the
  *  next page of likes.
  *
- *  @param fields       The pin fields that will be returned by the api
+ *  @param fields       The pin fields that will be returned by the API
  *  @param successBlock Called when the API call succeeds
  *  @param failureBlock Called when the API call fails
  */
@@ -260,7 +260,7 @@ typedef void (^PDKPinUploadProgress)(CGFloat percentComplete);
  *  Get a list of the authorized user's boards. The reponse can be used to
  *  get the next page of boards.
  *
- *  @param fields       The board fields that will be returned by the api
+ *  @param fields       The board fields that will be returned by the API
  *  @param successBlock Called when the API call succeeds
  *  @param failureBlock Called when the API call fails
  */
@@ -271,7 +271,7 @@ typedef void (^PDKPinUploadProgress)(CGFloat percentComplete);
  *  Get a list of the authorized user's followers. The response can be used to
  *  get the next page of followers (PDKUsers)
  *
- *  @param fields       The user fields that will be returned by the api
+ *  @param fields       The user fields that will be returned by the API
  *  @param successBlock Called when the API call succeeds
  *  @param failureBlock Called when the API call fails
  */
@@ -280,7 +280,7 @@ typedef void (^PDKPinUploadProgress)(CGFloat percentComplete);
                                   andFailure:(PDKClientFailure)failureBlock;
 
 /**
- *  Get a list of the users the  authorized user follows. The response can be used to
+ *  Get a list of the users the authorized user follows. The response can be used to
  *  get the next page of followers (PDKUsers)
  *
  *  @param fields       The user fields that will be returned by the api
@@ -292,10 +292,10 @@ typedef void (^PDKPinUploadProgress)(CGFloat percentComplete);
                                       andFailure:(PDKClientFailure)failureBlock;
 
 /**
- *  Get a list of the boards the  authorized user follows. The response can be used to
+ *  Get a list of the boards the authorized user follows. The response can be used to
  *  get the next page of followers (PDKUsers)
  *
- *  @param fields       The board fields that will be returned by the api
+ *  @param fields       The board fields that will be returned by the API
  *  @param successBlock Called when the API call succeeds
  *  @param failureBlock Called when the API call fails
  */
@@ -304,7 +304,7 @@ typedef void (^PDKPinUploadProgress)(CGFloat percentComplete);
                                        andFailure:(PDKClientFailure)failureBlock;
 
 /**
- *  Get a list of the interests the  authorized user follows. The response can be used to
+ *  Get a list of the interests the authorized user follows. The response can be used to
  *  get the next page of followers (PDKUsers)
  *
  *  @param successBlock Called when the API call succeeds
@@ -314,12 +314,12 @@ typedef void (^PDKPinUploadProgress)(CGFloat percentComplete);
                                            andFailure:(PDKClientFailure)failureBlock;
 
 
-#pragma mark - Board endpoints
+#pragma mark - Board Endpoints
 /**
  *  Get a PDKBoard object for the given board ID
  *
  *  @param boardId      ID of the board to fetch
- *  @param fields       The board fields that will be returned by the api
+ *  @param fields       The board fields that will be returned by the API
  *  @param successBlock Called when the API call succeeds
  *  @param failureBlock Called when the API call fails
  */
@@ -330,10 +330,10 @@ typedef void (^PDKPinUploadProgress)(CGFloat percentComplete);
 
 /**
  *  Get a list of pins for the given board. The response can be used to get
- *  the bext page of pins.
+ *  the next page of pins.
  *
  *  @param boardId      ID of the board
- *  @param fields       The pin fields that will be returned by the api
+ *  @param fields       The pin fields that will be returned by the API
  *  @param successBlock Called when the API call succeeds
  *  @param failureBlock Called when the API call fails
  */
@@ -371,7 +371,7 @@ typedef void (^PDKPinUploadProgress)(CGFloat percentComplete);
  *  Get a PDKPin for the given pinID
  *
  *  @param pinId        ID of the pin to fetch
- *  @param fields       The pin fields that will be returned by the api
+ *  @param fields       The pin fields that will be returned by the API
  *  @param successBlock Called when the API call succeeds
  *  @param failureBlock Called when the API call fails
  */
@@ -410,7 +410,7 @@ typedef void (^PDKPinUploadProgress)(CGFloat percentComplete);
 /**
  *  Creates a new pin from a UIImage
  *
- *  @param image          a UIImage to pin
+ *  @param image          A UIImage to pin
  *  @param link           A URL to the source page
  *  @param boardId        Id of the board to pin to
  *  @param pinDescription Description of the pin
@@ -447,7 +447,7 @@ typedef void (^PDKPinUploadProgress)(CGFloat percentComplete);
 
 /**
  *  Method used to open a URL. If the URL is a web address, we try to present a SFSafariViewController from the presentingViewController.
- * In earlier versions it uses UIApplication's openURL
+ *  In earlier versions it uses UIApplication's openURL
  */
 + (void)openURL:(NSURL *)url fromViewController:(UIViewController *)presentingViewController;
 
